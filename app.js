@@ -9,8 +9,8 @@ var app = express();
 var indexRoute = require('./routes/index');
 
 
-app.use(bodyParser.urlencoded({ extended: false }));  
-app.use(bodyParser.json());  
+app.use(bodyParser.urlencoded({ extended: false })); //extend define con que libreria va hacer el parcing 
+app.use(bodyParser.json());  //para peticiones aplication/json
 app.use(methodOverride());
 
 //creacion de una ruta relativa "public"
@@ -22,7 +22,6 @@ app.engine("html",require("ejs").renderFile);
 app.set('view engine', 'html');
 
 app.use('/',indexRoute);
-
 //Creacion del puerto 
 app.listen(3000, function() {  
 	console.log("Servidor escuchando en el puerto 3000");
