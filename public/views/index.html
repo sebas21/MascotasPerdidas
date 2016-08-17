@@ -1,14 +1,15 @@
-﻿<!doctype html>
-<html >
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-
-
-
+	<meta charset="UTF-8">
+	<title>Document</title>
 </head>
 <body>
-
- kjhkjh
-<p>gfdgdfgfd</p>
-
+	<h1>Home</h1>
+	{% if user %}
+		<h2>Holaa {{ user.username }}</h2>
+		<a href="/salir/">Salir</a>
+	{% endif %}
+	<a href="/login/">Ingresar</a>
 </body>
 </html>

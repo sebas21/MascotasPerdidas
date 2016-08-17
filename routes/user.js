@@ -9,6 +9,6 @@ router.post('/addUser', managerUser.addUser);
 
 router.get('/:id',managerUser.findById);
 router.delete('/delete/:id',managerUser.deleteUser);
-router.update('/update/:id',managerUser.updateUser);
+
 
 module.exports = router;

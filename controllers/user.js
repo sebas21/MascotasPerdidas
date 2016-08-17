@@ -58,20 +58,6 @@ exports.findById = function(req, res) {
 
 
 
-//PUT - Update a register already exists
-exports.updateUser = function(req, res) {
-	userModel.findById(req.params.id, function(err, user) {
-		user.Cedula: req.body.Cedula,
-		user.Nombre: req.body.Nombre,
-		user.Apellido: req.body.Apellido,
-		user.Correo: req.body.Correo
-		user.save(function(err) {
-			if(err) return res.send(500, err.message);
-      res.status(200).jsonp(user);
-		});
-	});
-};
-
 //DELETE - Delete a TVShow with specified ID
 exports.deleteUser = function(req, res) {
 	userModel.findById(req.params.id, function(err, user) {
