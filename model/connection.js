@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://admin:1111@ds021999.mlab.com:21999/db_carrito', function(err) {
+mongoose.connect('mongodb://helpets:helpets123@ds161245.mlab.com:61245/helpets', function(err) {
     if (err) {
         console.log('connection failed' + err);
     } else {

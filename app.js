@@ -5,10 +5,18 @@ var mongoose = require('mongoose');
 var bodyParser  = require("body-parser");
 var methodOverride = require("method-override");
 var path = require('path');
+
+
+
 var app = express();
+
+//cargo las rutas
 var indexRoute = require('./routes/index');
+var usersRoute = require('./routes/user');
 
 
+
+// Middlewares
 app.use(bodyParser.urlencoded({ extended: false })); //extend define con que libreria va hacer el parcing 
 app.use(bodyParser.json());  //para peticiones aplication/json
 app.use(methodOverride());
@@ -22,6 +30,8 @@ app.engine("html",require("ejs").renderFile);
 app.set('view engine', 'html');
 
 app.use('/',indexRoute);
+
+app.use('/users',usersRoute);
 //Creacion del puerto 
 app.listen(3000, function() {  
 	console.log("Servidor escuchando en el puerto 3000");
